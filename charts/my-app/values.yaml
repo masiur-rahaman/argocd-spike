@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nmatsui/hello-world-api
+  repository: nginx
   pullPolicy: IfNotPresent
   tag: latest
 
