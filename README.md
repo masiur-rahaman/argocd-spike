@@ -2,16 +2,16 @@
 1. kubectl apply -f k8s/namespace.yaml
 2. kubectl create namespace argocd
 3. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-4. argocd login localhost:8080
-5. argocd repo add git@github.com:masiur-rahaman/argocd-spike.git --ssh-private-key-path ~/.ssh/id_rsa_github_personal
-6. argocd repo list
-7. kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
-8. open http://localhost:8080
-9. kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
-10. argocd admin initial-password -n argocd (brew install argocd)
-11. kubectl apply -f argocd/dev-app.yaml
-12. kubectl apply -f argocd/staging-app.yaml
-13. kubectl get pods -n argocd
+4. kubectl get pods -n argocd
+5. kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
+6. kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode
+7. argocd admin initial-password -n argocd (brew install argocd)
+8. argocd login localhost:8080
+9. argocd repo add git@github.com:masiur-rahaman/argocd-spike.git --ssh-private-key-path ~/.ssh/id_rsa_github_personal
+10. argocd repo list
+11. open http://localhost:8080
+12. kubectl apply -f argocd/dev-app.yaml
+13. kubectl apply -f argocd/staging-app.yaml
 
 
 
@@ -20,3 +20,9 @@
 2. kubectl delete namespace --all
 3. kubectl get namespaces
 4. kubectl get po -n kube-system
+
+#### configure metallb
+1. minikube addons enable metallb
+2. kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+3. kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+4. kubectl apply -f k8s/metallb_config_map.yaml
