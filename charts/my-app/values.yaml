@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: tutum/hello-world
+  repository: nmatsui/hello-world-api
   pullPolicy: IfNotPresent
   tag: latest
 
