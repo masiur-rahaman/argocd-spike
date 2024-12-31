@@ -2,10 +2,9 @@
 1. Install ingress controller
 2. ```
    minikube addons enable ingress
-   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
    kubectl get pods -n ingress-nginx
    ```
-3. Install metallb
+3. Install metallb(optional)
    ```
    kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml
    kubectl get pods -n metallb-system
@@ -43,7 +42,7 @@ curl --resolve "my-app-dev.local:80:127.0.0.1" -i http://my-app-dev.local
 3. kubectl get namespaces
 4. kubectl get po -n kube-system
 
-#### configure metallb
+#### configure metallb(optional)
 1. minikube addons enable metallb
 2. kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
 3. kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
