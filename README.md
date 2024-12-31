@@ -1,6 +1,7 @@
 #### Prerequisite
 1. Install ingress controller
 2. ```
+   minikube addons enable ingress
    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
    kubectl get pods -n ingress-nginx
    ```
