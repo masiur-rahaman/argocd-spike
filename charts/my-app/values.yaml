@@ -9,5 +9,5 @@ service:
   type: ClusterIP
 
 ingress:
-  enabled: false
+  enabled: true
   host: my-app.local

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com-personal:masiur-rahaman/argocd-spike.git
+    repoURL: git@github.com:masiur-rahaman/argocd-spike.git
     targetRevision: HEAD
     path: charts/my-app
     helm:
