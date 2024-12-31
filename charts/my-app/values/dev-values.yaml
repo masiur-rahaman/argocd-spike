@@ -4,3 +4,5 @@ service:
 
 ingress:
   host: my-app-dev.local
+
+pathPrefix: "/dev"
