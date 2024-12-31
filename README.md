@@ -30,8 +30,13 @@
 13. kubectl apply -f argocd/staging-app.yaml
 14. access the application using the ingress controller
 ```bash
+kubectl get ingress --all-namespaces
 minikube tunnel
-curl --resolve "my-app-dev.local:80:127.0.0.1" -i http://my-app-dev.local
+// access dev app
+curl --resolve "my-app-dev.local:80:127.0.0.1" -i http://my-app-dev.local/dev
+
+// access staging app
+curl --resolve "my-app-dev.local:80:127.0.0.1" -i http://my-app-dev.local/staging
 ```
 
 
