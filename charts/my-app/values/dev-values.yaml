@@ -1,3 +1,6 @@
 replicaCount: 1
 service:
   type: NodePort
+
+ingress:
+  host: my-app-dev.local

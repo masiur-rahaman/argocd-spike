@@ -1,3 +1,6 @@
 replicaCount: 2
 service:
   type: ClusterIP
+
+ingress:
+  host: my-app-staging.local
